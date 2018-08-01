@@ -856,7 +856,7 @@
 //#define Z_PROBE_OFFSET_FROM_EXTRUDER 0.75   // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
-#define MIN_PROBE_EDGE 10
+#define MIN_PROBE_EDGE 16
 
 // X and Y axis travel speed (mm/m) between probes
 #define XY_PROBE_SPEED 8000
@@ -1089,7 +1089,7 @@
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
-//#define AUTO_BED_LEVELING_BILINEAR
+#define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
@@ -1121,7 +1121,7 @@
   /**
    * Enable the G26 Mesh Validation Pattern tool.
    */
-  //#define G26_MESH_VALIDATION
+  #define G26_MESH_VALIDATION
   #if ENABLED(G26_MESH_VALIDATION)
     #define MESH_TEST_NOZZLE_SIZE    0.4  // (mm) Diameter of primary nozzle.
     #define MESH_TEST_LAYER_HEIGHT   0.2  // (mm) Default layer height for the G26 Mesh Validation Tool.
@@ -1150,10 +1150,16 @@
   //#define BACK_PROBE_BED_POSITION 190
 
   // ANET A6 BLTOUCH right (39mm) to the nozzle
-  #define LEFT_PROBE_BED_POSITION 36
-  #define RIGHT_PROBE_BED_POSITION 190
-  #define FRONT_PROBE_BED_POSITION 20
-  #define BACK_PROBE_BED_POSITION 190
+  //#define LEFT_PROBE_BED_POSITION 36
+  //#define RIGHT_PROBE_BED_POSITION 190
+  //#define FRONT_PROBE_BED_POSITION 20
+  //#define BACK_PROBE_BED_POSITION 190
+
+  // ANET A6 BLTOUCH in front of nozzle
+  #define LEFT_PROBE_BED_POSITION (0 + MIN_PROBE_EDGE)
+  #define RIGHT_PROBE_BED_POSITION (X_MAX_POS + X_PROBE_OFFSET_FROM_EXTRUDER)
+  #define FRONT_PROBE_BED_POSITION (0 + MIN_PROBE_EDGE)
+  #define BACK_PROBE_BED_POSITION (Y_MAX_POS + Y_PROBE_OFFSET_FROM_EXTRUDER)
 
   // ANET A6 with new X-Axis and modded Y-Axis
   //#define LEFT_PROBE_BED_POSITION 20
@@ -1168,7 +1174,7 @@
   //#define BACK_PROBE_BED_POSITION 194
 
   // Probe along the Y axis, advancing X after each column
-  //#define PROBE_Y_FIRST
+  #define PROBE_Y_FIRST
 
   #if ENABLED(AUTO_BED_LEVELING_BILINEAR)
 
