@@ -846,15 +846,21 @@
 
 // ANET A6 with BLTouch/3D-Touch mounted in front of nozzle
 // https://www.thingiverse.com/thing:2451350
-#define X_PROBE_OFFSET_FROM_EXTRUDER   -9 // X offset: -left  +right  [of the nozzle]
-#define Y_PROBE_OFFSET_FROM_EXTRUDER  -56 // Y offset: -front +behind [the nozzle]
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -1.30 // Z offset: -below +above  [the nozzle]
+//#define X_PROBE_OFFSET_FROM_EXTRUDER   -9 // X offset: -left  +right  [of the nozzle]
+//#define Y_PROBE_OFFSET_FROM_EXTRUDER  -56 // Y offset: -front +behind [the nozzle]
+//#define Z_PROBE_OFFSET_FROM_EXTRUDER -1.30 // Z offset: -below +above  [the nozzle]
+
+// ANET A6 with BLTouch/3D-Touch mounted in between fan and belt
+// https://www.thingiverse.com/thing:3028912
+//#define X_PROBE_OFFSET_FROM_EXTRUDER  -29 // X offset: -left  +right  [of the nozzle]
+//#define Y_PROBE_OFFSET_FROM_EXTRUDER  -19 // Y offset: -front +behind [the nozzle]
+//#define Z_PROBE_OFFSET_FROM_EXTRUDER -2.00 // Z offset: -below +above  [the nozzle]
 
 //ANET A6 with BLTouch/3D-Touch betwen Fan and Belt
 // (mount: https://github.com/ralf-e/ANET_A6_modifications/tree/master/A6_X-Axis)
-//#define X_PROBE_OFFSET_FROM_EXTRUDER -30  // X offset: -left  +right  [of the nozzle]
-//#define Y_PROBE_OFFSET_FROM_EXTRUDER  15 // Y offset: -front +behind [the nozzle]
-//#define Z_PROBE_OFFSET_FROM_EXTRUDER 0.75   // Z offset: -below +above  [the nozzle]
+#define X_PROBE_OFFSET_FROM_EXTRUDER -30  // X offset: -left  +right  [of the nozzle]
+#define Y_PROBE_OFFSET_FROM_EXTRUDER  15 // Y offset: -front +behind [the nozzle]
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -1.30   // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 16
@@ -888,7 +894,7 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#if 1 // 0 for less clearance
+#if 0 // 0 for less clearance
   #define Z_CLEARANCE_DEPLOY_PROBE   10 // Z Clearance for Deploy/Stow
   #define Z_CLEARANCE_BETWEEN_PROBES  5 // Z Clearance between probe points
   #define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
